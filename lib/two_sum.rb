@@ -29,7 +29,7 @@ end
 
 def good_two_sum?(arr, target)
   hash = {}
-  
+
   arr.each do |el|
     hash[el] = target - el if hash[el].nil?
   end
