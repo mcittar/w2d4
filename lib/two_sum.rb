@@ -12,7 +12,7 @@ end
 
 def sort_two_sum?(arr, target)
   start_idx = 0
-  end_idx = arr.length - 1
+  end_idx =  arr.length - 1
   while start_idx < end_idx
     case arr[start_idx] + arr[end_idx] <=> target
     when 0
@@ -22,6 +22,20 @@ def sort_two_sum?(arr, target)
     when 1
       end_idx -= 1
     end
+  end
+
+  false
+end
+
+def good_two_sum?(arr, target)
+  hash = {}
+  
+  arr.each do |el|
+    hash[el] = target - el if hash[el].nil?
+  end
+
+  hash.values.each do |value|
+    return true if hash[value]
   end
 
   false

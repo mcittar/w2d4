@@ -32,6 +32,29 @@ describe '#sort_two_sum' do
 
 end
 
+describe '#good_two_sum' do
+  let(:multi_num) { [2, 3, 5, 3, 3, 7, 8] }
+  let(:arr_odd) { [1, 2, 3, 4, 5] }
+  let(:arr_even) { [1, 2, 3, 4] }
+
+  it 'returns true if two numbers in array sum to target' do
+    expect(good_two_sum?(arr_odd, 3)).to be(true)
+  end
+
+  it 'returns true if two numbers in array sum to target' do
+    expect(good_two_sum?(arr_even, 7)).to be(true)
+  end
+
+  it 'returns false if no two numbers in array sum to target' do
+    expect(good_two_sum?(arr_even, 10)).to be(false)
+  end
+
+  it 'returns true for arrays with unsorted repeated numbers' do
+    expect(good_two_sum?(multi_num, 8)).to be(true)
+  end
+
+end
+
 describe '#binary_search' do
   let(:arr_odd) { [1, 2, 3, 4, 5] }
   let(:arr_even) { [1, 2, 3, 4] }
